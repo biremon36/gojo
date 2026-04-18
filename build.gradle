@@ -30,6 +30,9 @@ loom {
 }
 
 dependencies {
+    include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+    include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
+    include "io.wispforest:owo-lib:${project.owo_version}"
     modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
     modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
     modImplementation "io.wispforest:owo-lib:${project.owo_version}"
