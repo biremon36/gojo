@@ -1,0 +1,32 @@
+{
+  "infinity_hum": {
+    "sounds": [
+      "modid:infinity_hum"
+    ]
+  },
+  "blue_cast": {
+    "sounds": [
+      "modid:blue_cast"
+    ]
+  },
+  "red_cast": {
+    "sounds": [
+      "modid:red_cast"
+    ]
+  },
+  "purple_charge": {
+    "sounds": [
+      "modid:purple_charge"
+    ]
+  },
+  "purple_fire": {
+    "sounds": [
+      "modid:purple_fire"
+    ]
+  },
+  "domain_expansion": {
+    "sounds": [
+      "modid:domain_expansion"
+    ]
+  }
+}
