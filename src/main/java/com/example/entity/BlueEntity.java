@@ -49,7 +49,11 @@ public class BlueEntity extends Entity {
     public void tick() {
         super.tick();
 
-        if (!this.level().isClientSide) {
+        if (this.level().isClientSide) {
+            // Client-side particle spawning at 20 ticks per second instead of render tick
+            this.level().addParticle(net.minecraft.core.particles.ParticleTypes.SOUL_FIRE_FLAME, this.getRandomX(1.5D), this.getRandomY(), this.getRandomZ(1.5D), 0.0D, 0.0D, 0.0D);
+            this.level().addParticle(net.minecraft.core.particles.ParticleTypes.ENCHANT, this.getRandomX(1.5D), this.getRandomY(), this.getRandomZ(1.5D), 0.0D, 0.0D, 0.0D);
+        } else {
             // Pull entities
             AABB area = this.getBoundingBox().inflate(5.0);
             List<Entity> entities = this.level().getEntities(this, area);

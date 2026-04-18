@@ -53,7 +53,17 @@ public class PurpleEntity extends Entity {
         // Move slowly
         this.setPos(this.getX() + this.getDeltaMovement().x, this.getY() + this.getDeltaMovement().y, this.getZ() + this.getDeltaMovement().z);
 
-        if (!this.level().isClientSide) {
+        if (this.level().isClientSide) {
+            // Client-side particle spawning at 20 ticks per second instead of render tick
+            for (int i = 0; i < 5; i++) {
+                double angle = Math.random() * Math.PI * 2;
+                double px = this.getX() + Math.cos(angle) * 2.0;
+                double pz = this.getZ() + Math.sin(angle) * 2.0;
+                double py = this.getY() + Math.random() * 2.0;
+                this.level().addParticle(net.minecraft.core.particles.ParticleTypes.PORTAL, px, py, pz, 0.0D, 0.0D, 0.0D);
+            }
+            this.level().addParticle(net.minecraft.core.particles.ParticleTypes.DRAGON_BREATH, this.getRandomX(3.0D), this.getRandomY(), this.getRandomZ(3.0D), 0.0D, 0.0D, 0.0D);
+        } else {
             AABB area = this.getBoundingBox().inflate(2.0);
             List<Entity> entities = this.level().getEntities(this, area);
 
